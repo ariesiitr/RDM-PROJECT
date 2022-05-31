@@ -112,10 +112,21 @@ a{
 
 /* FROM HERE INDEX.HTML PE KAM */
 .hed-2{
-    margin: 90px;
+    margin: 102px 90px 21px 90px;
+
     text-align: center;
     flex-wrap: wrap;
-    
 }
-
+.hed-3{
+    margin: 0px 90px 21px 90px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.options{
+    width:50% ; 
+    margin: 10px auto;
+}
+.herd{
+    margin-top: 40px;
+}
 

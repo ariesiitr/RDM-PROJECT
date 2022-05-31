@@ -1,0 +1,121 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}.ll{
+    
+     padding: 10px 10px; 
+     max-width: fit-content; 
+     margin-top: 30px;
+}
+.but1{
+    border: 1px solid black; 
+    margin-right: 0px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(0, 0, 0, 0.10),0 2px 8px 0 rgba(0, 0, 0, 0.10);
+
+    border-radius: 8px 0px 0px 8px;
+    background-color: aliceblue;
+    border: 0px;
+    margin-right:-2px ;
+    
+}
+.but2{
+    padding: 4px 9px;
+}
+.but3{
+    padding: 4px 6px;
+}
+.but4{
+    padding: 4px 11px;
+}
+.er {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(0, 0, 0, 0.10),0 2px 8px 0 rgba(0, 0, 0, 0.10);
+    background-color: aliceblue;
+    border: 0px;
+}
+input:focus{
+    background-color: rgb(242, 242, 242);
+}
+.p11{
+    color: red;
+    display: block;
+
+    margin: 1px -23px;
+}
+#cont-1{
+    display: flex;
+    flex-direction: row;
+    margin: 4px 12px;
+    padding: 16px;
+    gap: 24px;
+    
+    
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(71, 71, 71);
+    
+    justify-content: space-between;
+
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+#cart-1{
+    margin:auto 21px;
+    padding:0px;
+}
+.p{
+    margin-top: 6px;
+}
+#llop{
+    height: 44px;
+    margin: 6px -2px 4px 6px;
+}
+.text-center{
+    background-color: rgb(113, 113, 113);
+    
+    
+}
+.final-but{
+    border-radius: 5px;
+    padding: 4px;
+
+}
+.final-but:hover {
+    background-color: #9bf5f5;
+}
+#reg{
+    border-radius: 5px;
+    padding: 4px;
+
+}
+#reg:hover {
+    background-color: #9bf5f5;
+}
+.buty1{
+    background-color:rgb(71, 71, 71) ;
+    color: white;
+    border-color: rgb(71, 71, 71);
+}
+
+
+
+
+
+
+
+
+
+/* FROM HERE INDEX.HTML PE KAM */
+.hed-2{
+    margin: 90px;
+    text-align: center;
+    flex-wrap: wrap;
+    
+}
+
+

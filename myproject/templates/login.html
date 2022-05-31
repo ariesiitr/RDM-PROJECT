@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'register.css' %}">
+    <script src="{% static 'login.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+
+</head>
+
+<body style="background-color: aliceblue;">
+    
+
+    
+    
+    <div style="position: fixed ; top: 0px; width: 100%;">
+        <nav>
+            <div style="display: flex;flex-direction: row; ">
+                <span><img id="llop" src="{% static 'images (2).png' %}" alt=""></span>
+
+                <div id="cart-1" style="color: white;">CART</div>
+            </div>
+            <div>
+                <h1 style="color: white ;position: relative;top: 14px; left: 20px;">FLIPCON</h1>
+            </div>
+            <div id="cont-1">
+                <div>
+                    <button  class="buty1" id="regi-reg1" onclick="relreg()"> REGISTER</button>
+                </div>
+                <div>
+                    <button class="buty1" id="regi-reg2" onclick="rel2reg()">LOGIN</button>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <center>
+        <p style="margin-top: 100px; font-weight: bold; font-size: large;">LOGIN PORTAL</p>
+        <p>Login HERE!</p>
+        <div class="ll">
+
+
+
+            <div class="p">
+                <button class="but1 but3">@</button>
+                <input class="er" type="text" id="z2" placeholder="username" style="margin-bottom: 10px; padding: 4px; " name="username"
+                    important>
+
+            </div>
+
+            <p style="color: red; display: none;" id="wr3" class="p11">REQUIRD</p>
+            <div class="p">
+                <button class="but1 but4">/</button>
+                <input class="er" type="password" id="z3" placeholder="password" style="margin-bottom: 10px; padding: 4px;" name="password">
+
+            </div>
+            <p style="color: red; display: none;" id="wr4" class="p11">REQUIRED</p>
+
+
+         
+
+            <button style="margin:39px 0px 0px 0px; margin-bottom: 30px;" class="final-but" onclick="ou()" id="log" name="login">LOGIN</button>
+
+        </div>
+        <div>
+            <p class="text-center"
+                style="color: rgb(255, 255, 255);margin: auto 0px; position: fixed; bottom: 0px; width: 100%; font-size: larger;">MADE by
+                <b>
+                    suvansh and bhoomi
+                </b>
+            </p>
+        </div>
+    </center>
+
+
+</body>
+
+</html>

@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@300;500;600&family=Dancing+Script:wght@600;700&family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,500;1,600&display=swap');
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
 body
 {
     margin: 0;
@@ -14,8 +21,9 @@ body
     --imgWidth: 250px;
     --imgHeight: 350px;
 
-    --newWidth: 400px;
+    --newWidth: 340px;
     --newHeight: 500px;
+    --margin: 50px;
 }
 a, .btnUp
 {
@@ -52,15 +60,19 @@ span
 {
     font-size: 25px;
 }
-
+.backImg
+{
+    width: 100%;
+    height: 40rem;
+    background-color: #0ec6bd;
+}
 .backImg img
 {
     background-repeat: no-repeat;
     position: absolute;
     opacity: 0.7;
-    z-index: -1;
     width: 100%;
-    height: 89vh;
+    height: 40rem;
 }
 
 .navigation
@@ -96,7 +108,6 @@ span
 }
 .starter
 {
-    margin: 100px 100px auto auto;  
     color: var(--seagreen);
     display: flex;
     flex-direction: column;
@@ -105,9 +116,11 @@ span
     font-weight: 500;
     background-color: black;
     opacity: 0.5;
-    z-index: -1;
+    z-index: 6;
     text-align: center;
     border-radius: 30px;
+    position: absolute;
+    margin: 8vh auto auto 60vw;
 }
 
 .info
@@ -124,14 +137,13 @@ span
 }
 .container
 {
-    margin-top: 50px;
     width: 100%;
-    height: 90vh;
+    height: 660px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     background: var(--greenishBlue);
-    
+
 }
 
 .info a
@@ -141,14 +153,15 @@ span
 .slider
 {
     width: 100%;
-    height: 600px;
+    height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     left: 0;
-    transition: .8s;
-    margin-left: 1100px;
+    transition: 1.5s;
+    margin-left: 53%;
+    z-index: 10;
 }
 
 .slide
@@ -164,82 +177,22 @@ span
     position: relative;
     width: var(--imgWidth);
     height: var(--imgHeight);
-    transition: .8s;
-    background-color: aliceblue;
+    transition: 1.5s;
 }
 
-.btn
-{
-    position: absolute;
-    width: var(--imgWidth);
-    height: var(--imgHeight);
-    transition: .5s;
-    opacity: 0.2;
-    z-index: 2;
-}
-
-
-#span1:target ~ .slider #img1, 
-#span1:target ~ .slider #btn1
+.zoom
 {
     width: var(--newWidth);
     height: var(--newHeight);
+    transition: 1.5s;
 }
-#span2:target ~ .slider #img2, 
-#span2:target ~ .slider #btn2
-{
-    width: var(--newWidth);
-    height: var(--newHeight);
-
-}
-#span3:target ~ .slider #img3, 
-#span3:target ~ .slider #btn3
-{
-    width: var(--newWidth);
-    height: var(--newHeight);
-}
-#span4:target ~ .slider #img4, 
-#span4:target ~ .slider #btn4
-{
-    width: var(--newWidth);
-    height: var(--newHeight);
-}
-#span5:target ~ .slider #img5, 
-#span5:target ~ .slider #btn5
-{
-    width: var(--newWidth);
-    height: var(--newHeight);
-}
-#span6:target ~ .slider #img6, 
-#span6:target ~ .slider #btn6
-{
-    width: var(--newWidth);
-    height: var(--newHeight);
-}
-#span7:target ~ .slider #img7, 
-#span7:target ~ .slider #btn7
-{
-    width: var(--newWidth);
-    height: var(--newHeight);
-
-}
-
-
-#span1:target ~ .slider {left: -15%;}
-#span2:target ~ .slider {left: -30%;}
-#span3:target ~ .slider {left: -45%;}
-#span4:target ~ .slider {left: -60%;}
-#span5:target ~ .slider {left: -80%;}
-#span6:target ~ .slider {left: -100%;}
-#span7:target ~ .slider {left: -120%;}
-
-#bgSlider
+.bgSlider
 {
     font-size: 50px;
     font-weight: 500;
     text-align: center;
-    transition: 1.1s;
-
+    transition: 1.5s;
+    width: 30%;
 }
 .pBgSlider
 {
@@ -259,8 +212,7 @@ span
     text-align: center;
     vertical-align: middle;
     font-size: 60px;
-    position: relative;
-    margin-top: 240px;
+    margin: 80px 0;
 }
 
 .footer
@@ -296,14 +248,14 @@ span
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 20px 0;
 }
 .category
 {
-    position: relative;
-    top: 50px;
     display: flex;
-    flex-flow:column wrap;
     justify-content: space-between;
+    padding: 0 var(--margin);
+    flex-direction: column;
 }
 .itemsContainer img
 {
@@ -312,13 +264,30 @@ span
 }
 .items
 {
-    margin: 60px 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: hsl(0, 14%, 90%);
+    border: 1px solid rgb(165, 143, 143);
+    border-radius: 10px;
+    padding: 15px;
 }
+.items div
+{
+    display: inline;
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; */
+}
+
 .item
 {
     margin: 10px;
+}
+.item img
+{
+    border: 1px solid blanchedalmond;
+    border-radius: 15px;
+}
+.heading
+{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 10px 0;
 }

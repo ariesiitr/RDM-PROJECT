@@ -47,7 +47,7 @@ input:focus{
     display: flex;
     flex-direction: row;
     margin: 4px 12px;
-    padding: 16px;
+    padding: 10px;
     gap: 24px;
     
     
@@ -125,8 +125,21 @@ a{
 .options{
     width:50% ; 
     margin: 10px auto;
+    padding: 0.6rem;
 }
 .herd{
     margin-top: 40px;
 }
 
+
+
+
+
+
+/* //ELECTRONICS */
+.HEAD-1{
+    margin: 102px 90px 21px 90px;
+
+    text-align: center;
+    flex-wrap: wrap;
+}

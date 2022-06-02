@@ -1,0 +1,125 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'register.css' %}">
+    <script src="{% static 'electronics.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'owl.theme.green.css' %}">
+    <script src="{% static 'jquery.min.js' %}"></script>
+    <script src="{% static 'owl.carousel.min.js' %}"></script>
+
+    <style>
+        .item {
+            background-color: antiquewhite;
+            
+            height: 300px;
+            
+        }
+
+    </style>
+
+
+
+
+</head>
+
+<body style="background-color: aliceblue;">
+
+
+
+    {% if user.is_authenticated %}
+    <div style="position: fixed ; top: 0px; width: 100%;">
+        <nav>
+            <div style="display: flex;flex-direction: row; ">
+                <span><img id="llop" src="{% static 'images (2).png' %}" alt=""></span>
+
+                <div id="cart-1"><a href="/cart/">CART</a></div>
+            </div>
+            <div>
+                <h1 style="color: white ;position: relative;top: 13px;left: 120px;">FLIPCON</h1>
+            </div>
+
+
+            <div id="cont-1">
+                <div> <button class="buty1 btn btn-outline-warning" onclick="home()">HOME</button></div>
+                <div> <button class="buty1 btn btn-outline-success" onclick="about()"> ABOUT: {{user.username}}
+                    </button></div>
+                <div> <button class="buty1 btn btn-outline-primary" onclick="logout()">Log Out </button></div>
+            </div>
+        </nav>
+    </div>
+    <h2 class="HEAD-1"> ELECTRONICS ITEMS</h2>
+    <h4 style="text-align:center;">MOUSE</h4>
+    <div class="owl-carousel owl-theme">
+        {% for details1 in detail1 %}
+        <div class="item">
+            <h2>{{ forloop.counter }}</h2>
+            <img src="{{details1.image.url }}" alt="" height="50px" width="50%" class="IMG-1">
+            <h1>{{details1.product_name}}</h1>
+            <h2>price: {{details1.price}} </h2>
+            <h4>details: {{details1.detail}}</h4>
+            <button id="{{details1.product_name }}" onclick="buy(this.id)"> buy </button>
+        </div>
+        
+        {% endfor %}
+
+
+
+    </div>
+
+
+    <div>
+        <p class="text-center"
+            style="color: rgb(255, 255, 255);margin: auto 0px; position: fixed; bottom: 0px; width: 100%; font-size: larger;">
+            MADE by
+            <b>
+                suvansh and bhoomi
+            </b>
+        </p>
+    </div>
+
+
+    {% endif %}
+
+
+
+</body>
+<script>
+    $(document).ready(function () {
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            stagePadding:50,
+            margin: 20,
+            items:3,
+            center:true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 1,
+                    nav: false
+                },
+                1000: {
+                    items: 2,
+                    nav: true,
+                    
+                }
+            }
+        })
+    })
+</script>
+
+</html>

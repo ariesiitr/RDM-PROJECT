@@ -29,16 +29,17 @@
             <div style="display: flex;flex-direction: row; ">
                 <span><img id="llop" src="{% static 'images (2).png' %}" alt=""></span>
 
-                <div id="cart-1"><a href="">CART</a></div>
+                <div id="cart-1"><a href="/cart/">CART</a></div>
             </div>
             <div>
-                <h1 style="color: white ;position: relative;top: 14px; left: 20px;">FLIPCON</h1>
+                <h1 style="color: white ;position: relative;top: 13px;left: 120px;">FLIPCON</h1>
             </div>
 
 
             <div id="cont-1">
-                <div> <button class="buty1" onclick="about()"> ABOUT: {{user.username}} </button></div>
-                <div> <button class="buty1" onclick="logout()">Log Out </button></div>
+                <div> <button class="buty1 btn btn-outline-warning" onclick="home()">HOME</button></div>
+                <div> <button class="buty1 btn btn-outline-success" onclick="about()"> ABOUT: {{user.username}} </button></div>
+                <div> <button class="buty1 btn btn-outline-primary" onclick="logout()">Log Out </button></div>
             </div>
 
 
@@ -46,13 +47,13 @@
         </nav>
     </div>
 
-    <h2 class="hed-2"> What Do You Want To Buy! <em> {{user.username}}</em> </h2>
-    <p class="hed-3">here are some list of things which you may consider to buy</p>
+    <h2 class="hed-2"> What Do You Want  To Buy! <em> {{user.username}}</em> </h2>
+    <p class="hed-3">here are some categories of things in which you might be intrested</p>
     <div class="d-grid gap-2 col-8 mx-auto herd">
-        <button class="btn btn-outline-primary options" type="button">ELECTRONICS</button>
-        <button class="btn btn-outline-secondary options" type="button">EATABLES</button>
-        <button class="btn btn-outline-success options" type="button">GROCERY</button>
-        <button class="btn btn-outline-warning options" type="button">CLOTHES</button>
+        <button class="btn btn-outline-primary options" type="button"  onclick="fun1()">ELECTRONICS</button>
+        <button class="btn btn-outline-secondary options" type="button" onclick="fun2()">EATABLES</button>
+        <button class="btn btn-outline-success options" type="button" onclick="fun3()">GROCERY</button>
+        <button class="btn btn-outline-warning options" type="button" onclick="fun4()">CLOTHES</button>
 
 
 
@@ -60,6 +61,14 @@
     </div>
     <div class="buybox">
 
+    </div>
+    <div>
+        <p class="text-center"
+            style="color: rgb(255, 255, 255);margin: auto 0px; position: fixed; bottom: 0px; width: 100%; font-size: larger;">MADE by
+            <b>
+                suvansh and bhoomi
+            </b>
+        </p>
     </div>
     {% endif %}
 

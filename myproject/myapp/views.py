@@ -1,4 +1,5 @@
 from multiprocessing import context
+import re
 from typing import final
 from django.shortcuts import render,redirect
 from django.http import HttpResponse, JsonResponse
@@ -104,13 +105,14 @@ def cart(request):
 
     if request.method=='POST':  
         data = request.POST["detail"]
+        data1= request.user.username
         obj=DETAIL.objects.get(product_name=data)
-        if Cart.objects.filter(product_id =data).count() == 0:
-            cart=Cart.objects.create(product_id=data,quantity=1)
-            print("5")
+        if Cart.objects.filter(product_id =data ,userid = data1 ).count() == 0:
+            cart=Cart.objects.create(product_id=data,quantity=1,userid=request.user.username)
+            
             cart.save()
         else:
-            cart=Cart.objects.get(product_id =data)
+            cart=Cart.objects.get(product_id =data,userid = data1)
             cart.quantity=cart.quantity+1
 
             cart.save()
@@ -123,7 +125,7 @@ def cart(request):
         
         return JsonResponse(context)
     else:
-        c=Cart.objects.all()
+        c=Cart.objects.filter(userid=request.user.username)
         b=0
         for co in c:
             
@@ -138,7 +140,7 @@ def cart1(request):
         data = request.POST["detail"]
         data=data[1:]
         obj=DETAIL.objects.get(product_name=data)
-        cart=Cart.objects.get(product_id =data)
+        cart=Cart.objects.get(product_id =data,userid = request.user.username)
         if cart.quantity > 1:
             cart.quantity=cart.quantity-1
             cart.save()
@@ -158,7 +160,7 @@ def cart1(request):
         
         return JsonResponse(context)
     else:
-        c=Cart.objects.all()
+        c=Cart.objects.filter(userid=request.user.username)
         
         return render(request,'cart.html',{'ele':c})
 @csrf_exempt
@@ -168,7 +170,7 @@ def cart2(request):
         data = request.POST["detail"]
         data=data[1:]
         obj=DETAIL.objects.get(product_name=data)
-        cart=Cart.objects.get(product_id =data)
+        cart=Cart.objects.get(product_id =data,userid=request.user.username)
         
         cart.quantity=cart.quantity+1
         cart.save()
@@ -179,7 +181,7 @@ def cart2(request):
         context={'ele':'ok'}
         return JsonResponse(context)
     else:
-        c=Cart.objects.all()
+        c=Cart.objects.filter(userid=request.user.username)
         
         return render(request,'cart.html',{'ele':c})
 

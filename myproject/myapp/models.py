@@ -16,4 +16,5 @@ class Cart(models.Model):
     product_id=models.CharField(max_length=100,default="")
     quantity=models.IntegerField(default=0)
     total_cost=models.IntegerField(default=0)
+    userid=models.CharField(max_length=100,default="")
 

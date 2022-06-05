@@ -24,6 +24,7 @@ function home(){
     
 }
 function buy(clickID){
+    
     console.log(clickID)
     $.ajax({
         url: "/cart/",
@@ -32,7 +33,7 @@ function buy(clickID){
             'detail': clickID,
         },
         success: function(data, status, xhr){
-            alert("ok")
+            alert("item added to your cart")
         },
         error: function(xhr, status, err){
             alert(err);

@@ -20,10 +20,12 @@
 </head>
 
 <body style="background-color: aliceblue;">
+    
 
 
 
     {% if user.is_authenticated %}
+   
     <div style="position: fixed ; top: 0px; width: 100%;">
         <nav>
             <div style="display: flex;flex-direction: row; ">
@@ -43,11 +45,19 @@
             </div>
         </nav>
     </div>
+    <center>
+        <h2 style="margin-top:100px;">ITEMS YOU BOUGHT</h2>
     
-    
-    <div>
-        <h3 style="margin: 60px;">you bought {{obj.price}}</h3>
-    </div>
+        {% for eles in ele %}
+        <div>
+            <h3 style="margin: 60px;">{{eles.product_id}}
+                <p><button class="btn-outline-primary dec com-1">-</button> {{eles.quantity}} <button class="btn-outline-primary inc com-1">+</button></p> 
+                <p style="color: green;">total: {{eles.total_cost}}</p>
+            </h3>
+        </div>
+        {% endfor %}
+    </center>
+
     
 
     <div>

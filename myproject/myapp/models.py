@@ -9,6 +9,11 @@ class DETAIL(models.Model):
     price=models.IntegerField(default=0)
     product_name=models.CharField(max_length=100,default="")
     final=models.IntegerField(default=0)
+    type=models.CharField(max_length=100,default="")
 
-
+class Cart(models.Model):
+    username =models.CharField(max_length=100,default="")
+    product_id=models.CharField(max_length=100,default="")
+    quantity=models.IntegerField(default=0)
+    total_cost=models.IntegerField(default=0)
 

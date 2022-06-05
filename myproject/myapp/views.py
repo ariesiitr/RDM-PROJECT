@@ -124,7 +124,62 @@ def cart(request):
         return JsonResponse(context)
     else:
         c=Cart.objects.all()
+        b=0
+        for co in c:
+            
+            b=co.total_cost+b
+        
 
+        return render(request,'cart.html',{'ele':c,'elr':b})
+@csrf_exempt
+def cart1(request):
+
+    if request.method=='POST':  
+        data = request.POST["detail"]
+        data=data[1:]
+        obj=DETAIL.objects.get(product_name=data)
+        cart=Cart.objects.get(product_id =data)
+        if cart.quantity > 1:
+            cart.quantity=cart.quantity-1
+            cart.save()
+            cart.total_cost=(cart.quantity)*(obj.price)
+            cart.save()
+            print(cart.total_cost)
+
+            context={'ele':'ok'}
+
+        else :
+            cart.quantity=cart.quantity-1
+            cart.delete()
+            context={'ele':'ok'}
+            
+            
+
+        
+        return JsonResponse(context)
+    else:
+        c=Cart.objects.all()
+        
+        return render(request,'cart.html',{'ele':c})
+@csrf_exempt
+def cart2(request):
+
+    if request.method=='POST':  
+        data = request.POST["detail"]
+        data=data[1:]
+        obj=DETAIL.objects.get(product_name=data)
+        cart=Cart.objects.get(product_id =data)
+        
+        cart.quantity=cart.quantity+1
+        cart.save()
+        cart.total_cost=(cart.quantity)*(obj.price)
+        cart.save()
+        print(cart.total_cost)
+
+        context={'ele':'ok'}
+        return JsonResponse(context)
+    else:
+        c=Cart.objects.all()
         
         return render(request,'cart.html',{'ele':c})
 

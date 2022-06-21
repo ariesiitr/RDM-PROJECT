@@ -23,7 +23,7 @@
         .item {
             background-color: antiquewhite;
             
-            height: 300px;
+            height: 350px;
             
         }
         .owl-theme{
@@ -75,7 +75,7 @@
             <h2>price: {{details12.price}} </h2>
             <h4>details: {{details12.detail}}</h4>
             <span  id="1{{details12.product_name }}">
-                <button id="{{details12.product_name }}" onclick="buy(this.id)"> buy </button>
+                <button id="{{details12.product_name }}" onclick="buy(this.id)" class="butop btn btn-outline-primary"> buy </button>
             </span>
         </div>
         
@@ -92,7 +92,7 @@
             <h2>price: {{details11.price}} </h2>
             <h4>details: {{details11.detail}}</h4>
             <span  id="1{{details11.product_name }}">
-                <button id="{{details11.product_name }}" onclick="buy(this.id)"> buy </button>
+                <button id="{{details11.product_name }}" onclick="buy(this.id)" class="butop btn btn-outline-primary"> buy </button>
             </span>
         </div>
         
@@ -104,12 +104,12 @@
         
         <div class="item">
             <h2>{{ forloop.counter }}</h2>
-            <img src="{{details13.image.url }}" alt="" height="50px" width="50%" class="IMG-1">
+            <img src="{{details13.image.url }}" alt="" height="50px" width="50%" class="IMG-1" >
             <h1>{{details13.product_name}}</h1>
             <h2>price: {{details13.price}} </h2>
             <h4>details: {{details13.detail}}</h4>
             <span  id="1{{details13.product_name }}">
-                <button id="{{details13.product_name }}" onclick="buy(this.id)"> buy </button>
+                <button id="{{details13.product_name }}" onclick="buy(this.id)" class="butop btn btn-outline-primary"> buy </button>
             </span>
         </div>
         

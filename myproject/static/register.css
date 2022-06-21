@@ -154,3 +154,11 @@ a{
     padding: 3px 6px ;
     border-radius: 4px;
 }
+.IMG-1{
+    margin: auto;
+}
+.butop {
+    position: relative;
+    bottom: 5px;
+    margin-left: 44%;
+}

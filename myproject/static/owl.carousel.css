@@ -60,7 +60,10 @@
 
 .owl-carousel .owl-item img {
   display: block;
-  width: 19%;
+  position: relative;
+  width: 39%;
+  height: 35%;
+  top: -12px;
 }
 
 .owl-carousel .owl-nav.disabled,

@@ -37,3 +37,42 @@ function fun9(clickID){
     
 
 }
+
+function logout(){
+    $.ajax({
+        url: "/logout/",
+        method: "POST",
+        success: function(data, status, xhr){
+            if(data.created === "YES"){
+                window.location.replace("/register");
+            }
+            
+        },
+        error: function(xhr, status, err){
+            alert(err);
+        }
+
+    })
+
+}
+function home(){
+    window.location.replace("/");
+    
+}
+let d=0;
+function pay(){
+    
+    $.ajax({
+        url: "/cart3/",
+        method: "POST",
+        success: function(data, status, xhr){
+            alert("order succesfully placed ")
+            window.location.reload()
+        },
+        error: function(xhr, status, err){
+            alert(err);
+        }
+
+    })
+
+}

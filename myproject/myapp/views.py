@@ -1,3 +1,4 @@
+from enum import unique
 from multiprocessing import context
 import re
 from typing import final
@@ -107,12 +108,12 @@ def cart(request):
         data = request.POST["detail"]
         data1= request.user.username
         obj=DETAIL.objects.get(product_name=data)
-        if Cart.objects.filter(product_id =data ,userid = data1 ).count() == 0:
+        if Cart.objects.filter(product_id =data ,userid = data1 ,unique=0 ).count() == 0:
             cart=Cart.objects.create(product_id=data,quantity=1,userid=request.user.username)
             
             cart.save()
         else:
-            cart=Cart.objects.get(product_id =data,userid = data1)
+            cart=Cart.objects.get(product_id =data,userid = data1,unique=0)
             cart.quantity=cart.quantity+1
 
             cart.save()
@@ -125,7 +126,7 @@ def cart(request):
         
         return JsonResponse(context)
     else:
-        c=Cart.objects.filter(userid=request.user.username)
+        c=Cart.objects.filter(userid=request.user.username,unique=0)
         b=0
         for co in c:
             
@@ -140,7 +141,7 @@ def cart1(request):
         data = request.POST["detail"]
         data=data[1:]
         obj=DETAIL.objects.get(product_name=data)
-        cart=Cart.objects.get(product_id =data,userid = request.user.username)
+        cart=Cart.objects.get(product_id =data,userid = request.user.username,unique=0)
         if cart.quantity > 1:
             cart.quantity=cart.quantity-1
             cart.save()
@@ -160,7 +161,7 @@ def cart1(request):
         
         return JsonResponse(context)
     else:
-        c=Cart.objects.filter(userid=request.user.username)
+        c=Cart.objects.filter(userid=request.user.username,unique=0)
         
         return render(request,'cart.html',{'ele':c})
 @csrf_exempt
@@ -170,7 +171,7 @@ def cart2(request):
         data = request.POST["detail"]
         data=data[1:]
         obj=DETAIL.objects.get(product_name=data)
-        cart=Cart.objects.get(product_id =data,userid=request.user.username)
+        cart=Cart.objects.get(product_id =data,userid=request.user.username,unique=0)
         
         cart.quantity=cart.quantity+1
         cart.save()
@@ -181,9 +182,27 @@ def cart2(request):
         context={'ele':'ok'}
         return JsonResponse(context)
     else:
-        c=Cart.objects.filter(userid=request.user.username)
+        c=Cart.objects.filter(userid=request.user.username,unique=0)
         
         return render(request,'cart.html',{'ele':c})
+@csrf_exempt
+def cart3(request):
+
+    if request.method=='POST':  
+        cart=Cart.objects.filter(userid=request.user.username,unique=0)
+        
+        for carts in cart:
+            carts.unique=1
+            carts.save()
+    context={'op':'po'}
+        
+    return JsonResponse(context)
+@csrf_exempt
+def orders(request):
+
+      
+    cart=Cart.objects.filter(userid=request.user.username,unique=1)  
+    return render(request,'orders.html',{'ele':cart})          
 
 
 

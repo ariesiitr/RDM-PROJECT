@@ -47,23 +47,19 @@
         </nav>
     </div>
     <center>
-        <h2 style="margin-top:100px;">ITEMS YOU BOUGHT</h2>
+        <h2 style="margin-top:100px;">HERE is order HISTORY</h2>
        
-    
+        
+       
         {% for eles in ele %}
+        
         <div>
             <h3 style="margin: 60px;">{{eles.product_id}}
-                <p><button class=" btn btn-primary dec com-1" id="2{{eles.product_id}}" onclick="fun7(this.id)">-</button> {{eles.quantity}} <button class=" btn btn-primary inc com-1"  id="3{{eles.product_id}}" onclick="fun9(this.id)" >+</button></p> 
+                <p>{{eles.quantity}} </p> 
                 <p style="color: green;">total: {{eles.total_cost}}</p>
             </h3>
         </div>
         {% endfor %}
-    
-        <h2 id="now" style="padding-bottom: 30px;margin-top: 0px; ">
-            TOTAL PRICE TO PAY:{{elr}}
-        </h2>
-     
-        <button class="btn btn-primary" onclick="pay()" style="margin-bottom: 39px;">PROCEED TO PAY</button>
     </center>
 
     

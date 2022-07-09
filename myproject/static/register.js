@@ -70,7 +70,7 @@ function ou(){
             document.getElementById("wr9").style.display="none";
             
         }
-
+    
     }else{
         $.ajax({
             url: "/register/",

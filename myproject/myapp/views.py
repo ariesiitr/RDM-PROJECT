@@ -10,6 +10,7 @@ from django.views.decorators.csrf import csrf_exempt
 from numpy import product
 from .models import DETAIL
 from .models import Cart
+from .models import about
 
 
 
@@ -202,7 +203,12 @@ def orders(request):
 
       
     cart=Cart.objects.filter(userid=request.user.username,unique=1)  
-    return render(request,'orders.html',{'ele':cart})          
+    return render(request,'orders.html',{'ele':cart})       
+@csrf_exempt
+def about(request):
+    return render(request,"about.html")
+    
+     
 
 
 

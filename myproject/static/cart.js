@@ -76,3 +76,6 @@ function pay(){
     })
 
 }
+function about(){
+    window.location.replace("/about/");
+}

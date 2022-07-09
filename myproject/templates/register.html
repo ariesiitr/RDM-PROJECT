@@ -11,6 +11,16 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'register.css' %}">
+    <style>
+        @media (max-width:523px) {
+            #cont-1{
+                gap: 0px;
+            }
+            .flipicon{
+                left: 13px;
+            }
+        }
+    </style>
     <script src="{% static 'register.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
@@ -31,7 +41,7 @@
                 <div id="cart-1" style="color: white;">CART</div>
             </div>
             <div>
-                <h1 style="color: white ;position: relative; top: 13px; left: 50px;">FLIPCON</h1>
+                <h1  class="flipicon">FLIPCON</h1>
             </div>
             <div id="cont-1">
                 <div>

@@ -17,7 +17,7 @@ function logout(){
 
 }
 function about(){
-    console.log("ok")
+    window.location.replace("/about/");
 }
 function home(){
     window.location.replace("/");

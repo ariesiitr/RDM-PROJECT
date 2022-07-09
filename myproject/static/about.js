@@ -1,4 +1,3 @@
-
 function logout(){
     $.ajax({
         url: "/logout/",
@@ -16,11 +15,9 @@ function logout(){
     })
 
 }
-
-function home(){
-    window.location.replace("/");
-    
-}
 function about(){
     window.location.replace("/about/");
+}
+function home(){
+    window.location.replace("/");
 }

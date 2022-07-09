@@ -15,4 +15,5 @@ urlpatterns =[
     path('cart2/',views.cart2,name="cart2"),
     path('cart3/',views.cart3,name="cart3"),
     path('orders/',views.orders,name="orders"),
+    path('about/',views.about,name="about"),
 ]

@@ -21,12 +21,29 @@
     <style>
         .item {
             background-color: antiquewhite;
-            
+
             height: 350px;
             width: 93%;
-            
+
+        }
+    </style>
+    <style>
+        @media (max-width:823px) {
+            .flipicon1 {
+                left: 13px;
+            }
         }
 
+        @media (max-width:600px) {
+            .flipicon1 {
+                left: 13px;
+            }
+
+            .buty1 {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+        }
     </style>
 
 
@@ -47,13 +64,13 @@
                 <div id="cart-1"><a href="/cart/">CART</a></div>
             </div>
             <div>
-                <h1 style="color: white ;position: relative;top: 13px;left: 120px;">FLIPCON</h1>
+                <h1 class="flipicon1">FLIPCON</h1>
             </div>
 
 
             <div id="cont-1">
                 <div> <button class="buty1 btn btn-outline-warning" onclick="home()">HOME</button></div>
-                <div> <button class="buty1 btn btn-outline-success" onclick="about()"> ABOUT: {{user.username}}
+                <div> <button class="buty1 btn btn-outline-success" onclick="about()">{{user.username}}
                     </button></div>
                 <div> <button class="buty1 btn btn-outline-primary" onclick="logout()">Log Out </button></div>
             </div>
@@ -69,11 +86,12 @@
             <h1>{{details2.product_name}}</h1>
             <h2>price: {{details2.price}} </h2>
             <h4>details: {{details2.detail}}</h4>
-            <span  id="1{{details2.product_name }}">
-                <button id="{{details2.product_name }}" onclick="buy(this.id)" class="butop btn btn-outline-primary"> buy </button>
+            <span id="1{{details2.product_name }}">
+                <button id="{{details2.product_name }}" onclick="buy(this.id)" class="butop btn btn-outline-primary">
+                    buy </button>
             </span>
         </div>
-        
+
         {% endfor %}
 
 
@@ -101,10 +119,10 @@
     $(document).ready(function () {
         $('.owl-carousel').owlCarousel({
             loop: true,
-            stagePadding:50,
+            stagePadding: 50,
             margin: 20,
-            items:3,
-            center:true,
+            items: 3,
+            center: true,
             responsive: {
                 0: {
                     items: 1,
@@ -117,7 +135,7 @@
                 1000: {
                     items: 2,
                     nav: true,
-                    
+
                 }
             }
         })

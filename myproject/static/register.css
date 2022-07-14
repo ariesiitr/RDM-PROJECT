@@ -58,6 +58,12 @@ input:focus{
     top: 13px;
     left: 50px;
 }
+.flipicon1{
+    color: white ;
+    position: relative;
+    top: 13px;
+    left: 120px;
+}
 nav{
     display: flex;
     flex-direction: row;

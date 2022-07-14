@@ -1,7 +1,7 @@
 from django.db import models
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.
+
 class DETAIL(models.Model):
 
     image = models.ImageField(upload_to="images", blank=True, null=True)
@@ -18,6 +18,7 @@ class Cart(models.Model):
     total_cost=models.IntegerField(default=0)
     userid=models.CharField(max_length=100,default="")
     unique=models.IntegerField(default=0)
+    
 class about(models.Model):
     insta=models.CharField(max_length=100,default="")
     twit=models.CharField(max_length=100,default="")

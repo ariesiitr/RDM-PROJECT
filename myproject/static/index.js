@@ -38,3 +38,4 @@ function home(){
     window.location.reload();
     
 }
+

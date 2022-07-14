@@ -1,6 +1,8 @@
 from turtle import home
 from django.urls import path
 from . import views
+from django.views.static import serve
+from django.conf.urls import url
 urlpatterns =[
     path('register/',views.register,name="register"),
     path('login/',views.login,name="login"),
@@ -16,4 +18,6 @@ urlpatterns =[
     path('cart3/',views.cart3,name="cart3"),
     path('orders/',views.orders,name="orders"),
     path('about/',views.about,name="about"),
+    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
 ]

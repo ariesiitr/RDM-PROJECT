@@ -23,7 +23,7 @@ function home(){
     window.location.replace("/");
     
 }
-function buy1(clickID){
+function buy(clickID){
     
     console.log(clickID)
     $.ajax({
